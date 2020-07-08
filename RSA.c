@@ -20,7 +20,7 @@ int menu(){
 
     // Receive Selection
     printf("\nSelect: ");
-    scanf("%d", &selection);
+    scanf_s("%d", &selection);
 
     return selection;
 }
@@ -150,7 +150,7 @@ void decode(d,n){
 
   for(int i = 0; i < len; i++){
     printf("Ciphered text C%d: ", i+1);
-    scanf("%d", &text[i]);
+    scanf_s("%d", &text[i]);
     text[i] = MEA(text[i], d, n);
   }
 
@@ -198,7 +198,7 @@ int main(){
 
             do{
               printf("\nEnter the first prime number: ");
-              scanf("%d", &p);
+              scanf_s("%d", &p);
 
               if(check_prime(p) == false){
                 valid_input = false;
@@ -212,7 +212,7 @@ int main(){
 
             do{
               printf("\nEnter the second prime number: ");
-              scanf("%d", &q);
+              scanf_s("%d", &q);
 
               if(check_prime(q) == false){
                 valid_input = false;
@@ -233,7 +233,7 @@ int main(){
 
             do{
               printf("\nEnter a value for public exponent 'e': ");
-              scanf("%d", &e);
+              scanf_s("%d", &e);
 
               if(check_e(e,phi) == false){
                 valid_input = false;
@@ -261,9 +261,9 @@ int main(){
         } else if(selection == 2){
             printf("\nEnter the public encryption key: \n");
             printf("Enter 'e' value: ");
-            scanf("%d", &e);
+            scanf_s("%d", &e);
             printf("Enter 'n' value: ");
-            scanf("%d", &n);
+            scanf_s("%d", &n);
 
             printf("\nEnter text to be encrypted: ");
 
@@ -275,12 +275,12 @@ int main(){
         } else if(selection == 3){
             printf("\nEnter the private decryption key: \n");
             printf("Enter 'd' value: ");
-            scanf("%d", &d);
+            scanf_s("%d", &d);
             printf("Enter 'n' value: ");
-            scanf("%d", &n);
+            scanf_s("%d", &n);
 
             printf("\nEnter the number of characters in the encrypted text: ");
-            scanf("%d", &len);
+            scanf_s("%d", &len);
 
             decode(d,n);
             clear_input();
